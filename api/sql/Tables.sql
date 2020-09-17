@@ -32,7 +32,7 @@ CREATE TABLE tq.usuarios (
     "createdAt"               bigint NOT NULL,
     "updatedAt"               bigint NOT NULL,
     id                        SERIAL PRIMARY KEY,
-    id_rol                    INTEGER REFERENCES tk.roles(id) NOT NULL,
+    id_rol                    INTEGER REFERENCES tq.roles(id) NOT NULL,
     nombre                    TEXT NOT NULL,
     email                     TEXT NOT NULL,
     password                  TEXT NOT NULL,
