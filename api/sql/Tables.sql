@@ -1,5 +1,14 @@
 CREATE SCHEMA tq;
 
+/*para prueba*/
+CREATE TABLE tq.inputs(
+  "createdAt"     TIMESTAMP NOT NULL,
+  "updatedAt"     TIMESTAMP NOT NULL,
+   id             SERIAL PRIMARY KEY,
+   status         TEXT NOT NULL ,
+   mensaje    TEXT NOT NULL
+);
+
 CREATE TABLE tq.sesiones (
   idsesion                  SERIAL PRIMARY KEY,
   id_estatus                INTEGER REFERENCES tq.estatus(idcat_estatus) NOT NULL,
@@ -9,7 +18,7 @@ CREATE TABLE tq.sesiones (
   fecha_actualizacion       TIMESTAMP NOT NULL,
   idusuario_actualizacion   INTEGER REFERENCES tq.usuarios(idusuario)
 );
-//revisar formas optimas de manejar las sesiones
+-- //revisar formas optimas de manejar las sesiones
 
 CREATE TABLE tq.roles(
   "createdAt"     TIMESTAMP NOT NULL,
@@ -79,7 +88,7 @@ CREATE TABLE tq.stars (
     numero_de_estrellas       INTEGER
 );
 
-///como se manejara el rating
+-- ///como se manejara el rating
 
 CREATE TABLE tq.transacciones (
     "createdAt"               bigint NOT NULL,
